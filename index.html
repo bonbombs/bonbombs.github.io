@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <style>
+      @font-face {
+        font-family: Raleway;
+        src: url("font/Raleway-Regular.ttf");
+      }
+
+      @font-face {
+          font-family: distroBold;
+          src: url("font/distro.bold.ttf");
+      }
+      body {
+        background-color: #222222;
+      }
+      footer {
+        text-align: center;
+      }
+
+      #name_row{
+        //font-family: distroBold;
+        text-align: center;
+      }
+
+      .banner_text{
+        position: absolute;
+        left: 35px;
+        bottom: 10px;
+        color: #ffffff;
+        font-size: 32px;
+        font-family: distroBold;
+        text-shadow: 2px 3px 5px grey;
+        align-content: center;
+      }
+      .container {
+        background-color: #ffffff;
+        border-radius: 20px;
+        position: relative;
+        top: 100px;
+        padding: 50px;
+      }
+
+      .container > .row:nth-child(2){
+        background-image: url("images/hue.jpg");
+        background-repeat: no-repeat;
+        background-position: 0px -30px;
+        background-size: cover;
+      }
+
+      .container > .row:nth-child(3){
+        background-image: url("images/program.png");
+        background-repeat: no-repeat;
+        background-position: 0px -75px;
+        background-size: cover;
+      }
+
+      .container > .row:nth-child(4){
+        background-image: url("images/gamdev.png");
+        background-repeat: no-repeat;
+        background-position: 0px -50px;
+        background-size: cover;
+      }
+
+      .container > .row:not(#name_row) {
+        border-radius: 2px 50px;
+        position: relative;
+        background-color: hsla(290, 50%, 100%, 0.5);
+        height: 150px;
+        margin-bottom: 10px;
+        background-blend-mode: overlay;
+        -webkit-transition: border-radius 0.7s, background-color 0.7s;
+        transition: border-radius 0.7s, background-color 0.7s;
+      }
+
+      .container > .row:not(#name_row):hover{
+        border-radius: 10px;
+        background-color: hsla(290, 0%, 50%, 1.0);
+        opacity: 1.0;
+        -webkit-transition: border-radius 0.5s, background-color 0.5s;
+        transition: border-radius 0.5s, background-color 0.5s;
+        background-blend-mode: overlay;
+      }
+    </style>
+
+    <title>Splash Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="name_row">
+        <h1>Portfolio</h1>
+      </div>
+      <div class="row"><span class="banner_text">Art</span></div>
+      <div class="row"><span class="banner_text">Programming</span></div>
+      <div class="row"><span class="banner_text">Game Development</span></div>
+
+      <footer>
+        Website (c) Kelly Zhang 2015
+      </footer>
+    </div>
+
+  </body>
+
+</html>
