@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/canvas.js"></script>
     <!--link rel="stylesheet" href="css/stylesheet.css"-->
     <style>
       @font-face {
@@ -11,43 +13,52 @@
         src: url("font/Raleway-Regular.ttf");
       }
 
+      body {
+        background-color: #222222;
+      }
+
+      .container:not(#nav){
+        background-color: white;
+        border-radius: 5px;
+        padding: 30px 35px 35px 35px;
+      }
+
       .navbar {
         width: 100%;
       }
 
-      .navbar img {
+      .navbar .row:first-child {
+        margin-right: -20px;
+      }
+
+      .navbar canvas {
         height: 15%;
-        width: inherit;
+        width: 99.75%;
         border-left: 1px solid black;
         border-right: 1px solid black;
-        border: 1px solid black;
         object-position: 0px -20px;
         object-fit: cover;
         overflow: hidden;
         position: relative;
       }
 
-      .navbar img > h1 {
-        border: 1px solid black;
-        top: 0;
-
-        position: fixed;
-      }
-
       .navbar ul {
         width: inherit;
         display: inline-flex;
       }
-      .navbar ul > li:first-child {
+      .navbar ul > a:first-child {
         border-left: 1px solid black;
         border-radius: 0px 0px 0px 5px;
       }
 
-      .navbar ul > li:last-child {
+      .navbar ul > a:last-child {
         border-radius: 0px 0px 5px 0px;
       }
 
-      .navbar ul > li{
+      .navbar ul > a{
+        color: #444443;
+        text-decoration: none;
+        background-color: white;
         width: 25%;
         padding: 5px;
         text-align: center;
@@ -57,37 +68,40 @@
         transition: background-color 0.2s, color 0.2s;
       }
 
-      .navbar ul > li:hover {
+      .navbar ul > a:hover {
         background-color: #444443;
         color: white;
         transition: background-color 0.2s, color 0.2s;
       }
 
-      #picOfMe {
-        //border: 1px solid black;
-      }
       #picOfMe > img{
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        padding-top: 15px;
+        object-fit: scale-down;
         overflow: hidden;
       }
-
+      footer {
+        color: white;
+        text-align: center;
+        padding: 5px 0px 5px 0px;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div id="nav" class="container">
       <div class="row navbar">
-        <img src="images/hue.jpg">
-        <ul>
-          <li>Art</li>
-          <li>Programming</li>
-          <li>Game Dev</li>
-          <li>About</li>
-        </ul>
+          <canvas id="navcanvas"></canvas>
+          <ul>
+            <a href="art.html"><li>Art</li></a>
+            <a href="programming.html"><li>Programming</li></a>
+            <a href="gamedev.html"><li>Game Dev</li></a>
+            <a href="#"><li><b>About</b></li></a>
+          </ul>
       </div>
+    </div>
+    <div class="container">
       <div class="row">
-        <h1>About Me</h1>
+        <h1>About</h1>
       </div>
       <div class="row">
         <div class="one-half column" id="picOfMe">
@@ -95,8 +109,9 @@
         </div>
         <div class="one-half column">
           <div class="row">
-            <h5 style="text-align:right;">Computer Science // Interactive Media & Game Design</h5>
-            <h6 style="text-align:right;">Worcester Polytechnic Institute</h6>
+            <h3>> Kelly Zhang</h3>
+            <h6 style="text-align:left;"><b>> Worcester Polytechnic Institute</b></h6>
+            <h6 style="text-align:left;"><b>> Computer Science<br>> Interactive Media & Game Development</b></h6>
           </div>
           <div class="row">
             <p>Currently a sophmore who is interested in working on UI/UX
@@ -114,5 +129,8 @@
         </div>
       </div>
     </div>
+    <footer>
+      Website (c) Kelly Zhang 2015
+    </footer>
   </body>
 </html>

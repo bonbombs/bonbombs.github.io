@@ -1,0 +1,156 @@
+<!DOCYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/canvas.js"></script>
+    <!--link rel="stylesheet" href="css/stylesheet.css"-->
+    <style>
+      @font-face {
+        font-family: Raleway;
+        src: url("font/Raleway-Regular.ttf");
+      }
+
+      body {
+        background-color: #222222;
+      }
+
+      .container:not(#nav){
+        background-color: white;
+        border-radius: 5px;
+        padding: 30px 35px 35px 35px;
+      }
+
+      .navbar {
+        width: 100%;
+      }
+
+      .navbar .row:first-child {
+        margin-right: -20px;
+      }
+
+      .navbar canvas {
+        height: 15%;
+        width: 99.75%;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        object-position: 0px -20px;
+        object-fit: cover;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .navbar ul {
+        width: inherit;
+        display: inline-flex;
+      }
+      .navbar ul > a:first-child {
+        border-left: 1px solid black;
+        border-radius: 0px 0px 0px 5px;
+      }
+
+      .navbar ul > a:last-child {
+        border-radius: 0px 0px 5px 0px;
+      }
+
+      .navbar ul > a{
+        color: #444443;
+        text-decoration: none;
+        background-color: white;
+        width: 25%;
+        padding: 5px;
+        text-align: center;
+        border: 1px solid black;
+        border-left: none;
+        list-style: none;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      .navbar ul > a:hover {
+        background-color: #444443;
+        color: white;
+        transition: background-color 0.2s, color 0.2s;
+      }
+
+      #picOfMe > img{
+        width: 100%;
+        padding-top: 15px;
+        object-fit: scale-down;
+        overflow: hidden;
+      }
+      footer {
+        color: white;
+        text-align: center;
+        padding: 5px 0px 5px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav" class="container">
+      <div class="row navbar">
+          <canvas id="navcanvas"></canvas>
+          <ul>
+            <a href="art.html"><li><b>Art</b></li></a>
+            <a href="programming.html"><li><b>Projects</b></li></a>
+            <a href="gamedev.html"><li><b>Game Jams</b></li></a>
+            <a href="about.html"><li><b>About</b></li></a>
+          </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <h1>Game Jam Games</h1>
+      </div>
+      <div class="row">
+        <div class="one-half column" id="picOfMe">
+          <img src="images/dontdropthebaby.jpg"/>
+        </div>
+        <div class="one-half column">
+          <div class="row">
+            <h3>> Don't Drop the Baby</h3>
+            <h6 style="text-align:left;"><b>> Global Game Jam 2016</b></h6>
+          </div>
+          <div class="row">
+            <p>A 48 hour game jam game that I worked on alongside Erik Cerini, Lily Bunyea, and Khalif Mitchell.
+            <br> You and a friend play as two imps who have to catch babies that are randomly falling from the sky. Bounce the baby once, let go of the blanket, and catch the baby with your hands.<br>
+            This is based on a ritual in western India where babies are thrown off of tall buildings to bless the baby and their family.
+            </p>
+            <p>I worked on player controls, UI, and character sprites.
+          </div>
+          <div class="row">
+            <center>
+              <button>Link to Play</button>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-half column" id="picOfMe">
+          <img src="images/gamdev.png"/>
+        </div>
+        <div class="one-half column">
+          <div class="row">
+            <h3>> Maximum Cabatcity</h3>
+            <h6 style="text-align:left;"><b>> WPI A-Term Game Jam 2015</b></h6>
+          </div>
+          <div class="row">
+            <p>A 48 hour game jam game that I worked alongside on alongside Hope Wallace. <br>This game jam was locally hosted by the WPI Game Developer's Association where the theme was "clicker game". 
+            <br> Maximum Cabatcity is a clicker game where there are many bats spawning and circling around you. The more bats, the faster your HP depletes. In order to survive, the player must click on the button in the middle to throw bones, knocking the bats out. 
+            </p>
+            <p>I worked on the implementing the powerup spawner, integrating powerups with the bone projectiles and the UI.
+          </div>
+          <div class="row">
+            <center>
+              <button>Link to Play</button>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      Website (c) Kelly Zhang 2015
+    </footer>
+  </body>
+</html>

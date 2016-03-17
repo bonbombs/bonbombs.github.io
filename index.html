@@ -1,159 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <style>
-      @font-face {
-        font-family: Raleway;
-        src: url("font/Raleway-Regular.ttf");
-      }
-
-      @font-face {
-          font-family: distroBold;
-          src: url("font/distro.bold.ttf");
-      }
-      body {
-        background-color: #222222;
-      }
-      footer {
-        text-align: center;
-      }
-
-      #name_row{
-        //font-family: distroBold;
-        text-align: center;
-      }
-
-      .banner_text{
-        position: absolute;
-        left: 35px;
-        bottom: 10px;
-        color: #ffffff;
-        font-size: 32px;
-        font-family: distroBold;
-        text-shadow: 2px 3px 5px grey;
-        align-content: center;
-      }
-      .container {
-        background-color: #ffffff;
-        border-radius: 20px;
-        position: relative;
-        top: 100px;
-        padding: 50px;
-      }
-
-      .container > .row:nth-child(2){
-        background-image: url("images/hue.jpg");
-        background-repeat: no-repeat;
-        background-position: 0px -30px;
-        background-size: cover;
-      }
-
-      .container > .row:nth-child(3){
-        background-image: url("images/program.png");
-        background-repeat: no-repeat;
-        background-position: 0px -75px;
-        background-size: cover;
-      }
-
-      .container > .row:nth-child(4){
-        background-image: url("images/gamdev.png");
-        background-repeat: no-repeat;
-        background-position: 0px -50px;
-        background-size: cover;
-      }
-
-      .container > .row:not(#name_row) {
-        border-radius: 2px 50px;
-        position: relative;
-        background-color: hsla(290, 50%, 100%, 0.5);
-        height: 150px;
-        margin-bottom: 10px;
-        background-blend-mode: overlay;
-        -webkit-transition: border-radius 0.7s, background-color 0.7s;
-        transition: border-radius 0.7s, background-color 0.7s;
-      }
-
-      .container > .row:not(#name_row):hover{
-        border-radius: 10px;
-        background-color: hsla(290, 0%, 50%, 1.0);
-        opacity: 1.0;
-        -webkit-transition: border-radius 0.5s, background-color 0.5s;
-        transition: border-radius 0.5s, background-color 0.5s;
-        background-blend-mode: overlay;
-      }
-
-      #page-cover {
-        opacity: 0;
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        top: 0;
-        left: 0;
-        z-index: 500;
-      }
-
-      #cover-message {
-        text-align: center;
-        width: 500px;
-        z-index: 600;
-        position: fixed;
-        border-radius: 5px;
-        padding: 50px;
-        margin:-100px 0 0 -150px;
-        background-color: white;
-        top: 50%;
-        left: 43%;
-      }
-    </style>
-
-    <title>Splash Page</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row" id="name_row">
-        <h1>Portfolio</h1>
-      </div>
-      <div class="row"><span class="banner_text">Art</span></div>
-      <div class="row"><span class="banner_text">Programming</span></div>
-      <div class="row"><span class="banner_text">Game Development</span></div>
-
-      <footer>
-        Website (c) Kelly Zhang 2015
-      </footer>
-    </div>
-
-    <div id="page-cover"></div>
-    <div id="cover-message">
-      <p>
-        Welcome to my portfolio page! Unfortunately, it is still under construction
-        so check back at a later time. For now, enjoy this lovely splash page. 
-        Sorry for the inconveinience!
-      </p>
-      <button id="close">Close</button>
-    </div>
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        console.log("ehy");
-        $("#page-cover").css("opacity", 0.7).fadeIn(1000, function(){
-          $("#cover-message").css("display", "").slideDown("slow");
-        });
-
-        $("#close").click(function(e){
-          $("#cover-message").css("display", "none");
-          $("#page-cover").css("display", "none");
-          e.preventDefault();
-        })
-
-      });
-
-    </script>
-
-  </body>
-
+    <head>
+        <title>Kelly Zhang's Portfolio</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap-social.css">
+        <style>
+             .spacer {
+                margin-bottom: 25px;
+            }
+            
+            .modal .modal-dialog {
+                text-align: center;
+                width: 50%;
+            }
+            .modal-wide .modal-body {
+                overflow-y: auto;
+            }
+            
+            .modal-footer {
+                text-align: center;
+            }
+            
+            .modal-body > img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+            
+            nav {
+                margin-top: 20px;
+            }
+            
+            #tallModal .modal-body p { margin-bottom: 900px }
+            .btn-social-icon {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <nav>
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" href="index.html">Kelly Zhang's Portfolio</a>
+                </div>
+                <div id="navbar" class="navbar-right">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Art <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="gallery/index.html">Main</a></li>
+                                <li><a href="gallery/conceptart.html">Concept Art</a></li>
+                                <li><a href="#">3D</a></li>
+                            </ul>
+                        </li>
+                        <!--<li><a href="projects.html">Projects</a></li>-->
+                        <li><a href="gamejams.html">Game Jams</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="jumbotron">
+            <h1>Work in Progress!</h1>
+            <p>Hello! My website portfolio is still a work in progress so there is not much to see as of now, but feel free to browse!</p>
+        </div>
+        <div class="col-lg-12 text-center">
+            <h3>Questions? Feedback?<br>
+            Contact me on any of the following:</h3>
+            <a href="mailto:kezhang@wpi.edu" class="btn btn-social-icon btn-reddit">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+            </a>
+            <a href="http://github.com/bonbombs" class="btn btn-social-icon btn-github">
+                <span class="fa fa-github"></span>
+            </a>
+            <a href="http://twitter.com/chiffles_" class="btn btn-social-icon btn-twitter">
+                <span class="fa fa-twitter"></span>
+            </a>
+        </div>
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </body>
 </html>

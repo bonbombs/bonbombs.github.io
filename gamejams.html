@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kelly Zhang's Portfolio</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <style>
+            .contentbody{
+                margin-top: 75px;
+            } 
+            .spacer {
+                margin-bottom: 25px;
+            }    
+        </style>
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" href="index.html">Kelly Zhang's Portfolio</a>
+                </div>
+                <div id="navbar" class="navbar-right">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Art <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="gallery/index.html">Main</a></li>
+                                <li><a href="gallery/conceptart.html">Concept Art</a></li>
+                                <li><a href="#">3D</a></li>
+                            </ul>
+                        </li>
+                        <!--<li><a href="projects.html">Projects</a></li>-->
+                        <li class="active"><a href="gamejams.html">Game Jams</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        
+        <div class="container contentbody">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="spacer">Game Jams //
+                        <small>Games made with small groups over a limited period amount of time</small>
+                    </h2>
+                    <p class="text-center"></p>
+                </div>
+            </div>
+            <div class="row" id="gamejams">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                    <img src="images/dontdropthebaby.jpg" alt="...">
+                    <div class="caption">
+                        <h3>Don't Drop the Baby <br><small>Global Game Jam 2016 // 48 hours</small></h3>
+                        <p><a href="http://globalgamejam.org/2016/games/dont-drop-baby" class="btn btn-primary" role="button">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                        </a>
+                        <a href="http://ggj.s3.amazonaws.com/games/2016/01/31/1801/Don%27t%20Drop%20the%20Baby.zip" class="btn btn-primary" role="button">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                        </a>
+                        <a href="#babydrop" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        </p>
+                        <div id="babydrop" class="collapse">
+                            <p>You and a friend play as two imps who have to catch babies that are randomly falling from the sky. Bounce the baby once, let go of the blanket, and catch the baby with your hands.<br>
+                            <br>This is based on a ritual in western India where babies are thrown off of tall buildings to bless the baby and their family.
+                                Worked on alongside Erik Cerini, Lily Bunyea, and Khalif Mitchell.
+                            </p>
+                            <p>I worked on player controls, UI, and character sprites.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                    <img src="images/gamdev.png" alt="...">
+                    <div class="caption">
+                        <h3>Maximum Cabatcity <br><small>WPI A-Term Game Jam 2015 // 48 hours</small></h3>
+                        <p><a href="#" class="btn btn-primary" role="button" disabled="disabled">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                        </a>
+                        <a href="#" class="btn btn-primary" role="button">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                        </a>
+                        <a href="#maxbat" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        </p>
+                        <div id="maxbat" class="collapse">
+                            <p>Maximum Cabatcity is a clicker game where there are many bats spawning and circling around you. The more bats, the faster your HP depletes. In order to survive, the player must click on the button in the middle to throw bones, knocking the bats out. 
+                            Worked alongside on alongside Hope Wallace.
+                            </p>
+                            <p>I worked on the implementing the powerup spawner, integrating powerups with the bone projectiles and the UI.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </body>
+</html>

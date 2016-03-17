@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kelly Zhang's Portfolio</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <style> 
+            .spacer {
+                margin-bottom: 25px;
+            }
+            
+            .modal .modal-dialog {
+                text-align: center;
+                width: 50%;
+            }
+            .modal-wide .modal-body {
+                overflow-y: auto;
+            }
+            
+            .modal-footer {
+                text-align: center;
+            }
+            
+            .modal-body > img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+            
+            nav {
+                margin-top: 20px;
+            }
+            #gallery {
+                margin-top: 30px;
+            }
+            #tallModal .modal-body p { margin-bottom: 900px }
+        </style>
+    </head>
+    <body class="container">
+        <nav>
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" href="../index.html">Kelly Zhang's Portfolio</a>
+                </div>
+                <div id="navbar" class="navbar-right">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="dropdown active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Art <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Main</a></li>
+                                <li><a href="#">Concept Art</a></li>
+                                <li><a href="#">3D</a></li>
+                            </ul>
+                        </li>
+                        <!--<li><a href="../projects.html">Projects</a></li>-->
+                        <li><a href="../gamejams.html">Game Jams</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container-fluid contentbody">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="spacer">Gallery // Concept Art //
+                        <small>Assignment work for IMGD3700 (Concept Art & Illustration)</small>
+                    </h2>
+                    <div>
+                        <div id="weeklist" class="btn-group btn-group-justified" role="group" aria-label="...">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default" onclick="populateGallery(0)">Week 1</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default" onclick="populateGallery(1)">Week 2</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default" onclick="populateGallery(2)">Week 3</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="gallery"></div>
+        </div>
+        
+        <div id="imgModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <p id="imgDesc"></p>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script>
+            var imgpath = "../images/";
+            var week1 = [
+                // {
+                //     path: "bigboy.png",
+                //     desc: "Concept art done for Heist Night."
+                // }
+            ]
+            
+            var week2 = [];
+            var week3 = [];
+            
+            
+            var weeks = [week1, week2, week3];
+            
+            var activeWeek = 0;
+            
+            $(document).ready(function(){
+                
+                $(document).on('click', '#weeklist button', function(e) {
+                    $("#weeklist button").removeClass("active");
+                    $(this).addClass("active");
+                });
+                
+                populateGallery(0); //populate week 1 gallery
+                
+                $(".modal-wide").on("show.bs.modal", function() {
+                    var height = $(window).height() - 200;
+                    $(this).find(".modal-body").css("max-height", height);
+                });
+                
+            });
+            function populateGallery(week){
+                activeWeek = weeks[week];
+                $("#gallery").html("");
+                var imgs = weeks[week];
+                for(var i = 0; i < imgs.length; i++){
+                    $thmbnail = $("<div class='col-xs-6 col-md-3 rounded'>"
+                    + "<a href='#' class='thumbnail'>"
+                    + "<img src=" + imgpath + imgs[i].path + " " + "id=" + i + ">"
+                    + "</a></div>");
+                    $thmbnail.click(function(){
+                        var imgtag = $(this).children().children();
+                        showModal(imgtag[0].getAttribute('id'));
+                    });
+                    $("#gallery").append($thmbnail); 
+                }
+            }
+            function showModal(idx){
+                $(".modal-body").html("<img src=" + imgpath + activeWeek[idx].path + ">");
+                $("#imgDesc").html(activeWeek[idx].desc);
+                $("#imgModal").modal({keyboard: true, backdrop: true});
+            }
+        </script>
+    </body>
+</html>
