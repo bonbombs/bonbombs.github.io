@@ -1,0 +1,30 @@
+body:not(nav) { 
+    margin-top: 50px;
+    padding-bottom: 70px; 
+}
+.spacer {
+    margin-bottom: 25px;
+}
+
+.modal .modal-dialog {
+    text-align: center;
+    width: 50%;
+}
+.modal-wide .modal-body {
+    overflow-y: auto;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-body > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#tallModal .modal-body p { margin-bottom: 900px }
+.btn-social-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+}
