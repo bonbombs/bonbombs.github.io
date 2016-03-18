@@ -1,7 +1,13 @@
 body:not(nav) { 
+    background-color: #222222;
     margin-top: 50px;
     padding-bottom: 70px; 
 }
+
+.container {
+    background-color: white;   
+}
+
 .spacer {
     margin-bottom: 25px;
 }
