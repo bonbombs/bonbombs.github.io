@@ -1,11 +1,49 @@
-body:not(nav) { 
-    background-color: #222222;
-    margin-top: 50px;
-    padding-bottom: 70px; 
+@font-face {
+    src: url("/font/distro.bold.ttf");
+    font-family: distro;
 }
 
-.container {
-    background-color: white;   
+@font-face {
+    src: url("/font/raleway-regular.ttf");
+    font-family: raleway;
+}
+
+@font-face {
+    font-family: 'caviar_dreamsbold';
+    src: url('/font/Caviar_Dreams_Bold-webfont.eot');
+    src: url('/font/Caviar_Dreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/font/Caviar_Dreams_Bold-webfont.woff') format('woff'),
+         url('/font/Caviar_Dreams_Bold-webfont.ttf') format('truetype'),
+         url('/font/Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: raleway;
+}
+body:not(nav) { 
+    background-color: white;
+}
+
+small {
+    font-family: raleway;
+}
+
+body > .container {
+    border-radius: 5px; 
+    margin-top: 20px;
+}
+
+.navbar-brand {
+    font-family: distro;
+    font-size: 120%;
+    margin-right: 40px;
+}
+
+nav {
+    font-size: 120%;
 }
 
 .spacer {
@@ -31,6 +69,191 @@ body:not(nav) {
 
 #tallModal .modal-body p { margin-bottom: 900px }
 .btn-social-icon {
-    margin-left: 10px;
     margin-right: 10px;
+    margin-top: 7px;
+}
+
+.navbar-default {
+    color: none;
+    background: none;
+    border: none;
+}
+
+.social-btn-group > li{
+    display: inline-block;
+}
+
+nav > .container{
+    background: white;
+    border-radius: 0px 0px 5px 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#navigation {
+    text-align: center;
+    background-color: white;
+}
+
+ul.topnav .active-nav {
+    border-bottom: 5px solid mediumseagreen;
+}
+
+ul.topnav li ul {
+    display: none;
+    position: absolute;
+    border: 1px solid #ddd;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin-top: 1px;
+    z-index: 1;
+}
+
+ul.topnav li ul li{
+    padding: 3px 8px;
+    margin: 0;
+    -webkit-transition: none;
+    transition: none;
+    display: block;
+    width: auto;
+    min-width: 250px;
+    border-bottom:1px solid #ddd;
+    text-align: center;
+}
+
+ul.topnav li:hover ul {
+    display: block;
+}
+
+ul.topnav li a:hover {
+    display: block;
+    border: none;
+    -webkit-transition: none;
+    transition: none;
+}
+
+ul.topnav > li:hover:not(.active-nav):not(.mobile-header) {
+    border-bottom: 5px solid #ddd;
+}
+
+ul.topnav li > ul > li:hover {
+    background-color: #ddd;
+}
+
+.icon {display: none;}
+
+ul.topnav .mobile-header {display: none;}
+
+.header {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#name {
+    width: 100%;
+    font-size: 28px;
+    margin: auto;
+}
+
+ul.topnav {
+    display:table;
+    width:70%;
+    margin: auto;
+    padding:0;
+    list-style-type:none;
+    min-height: 58px;
+}
+
+ul.topnav li {
+    display:table-cell;
+    width: 1%;
+    border-bottom:1px solid #ddd;
+    vertical-align: middle;
+    text-align: center;
+}
+
+ul.topnav li{
+    -webkit-transition: border-bottom 0.4s;
+    transition: border-bottom 0.4s;
+}
+
+ul.topnav li:not(.mobile-header) {
+     font-family: caviar_dreamsbold;
+}
+
+ul.topnav li a {
+  display: block;
+  margin: 0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+  
+}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav {
+      width: 100%;
+      margin: 0;
+      height: auto;
+  }
+  .header {display: none;}
+  #name {display: none;}
+  ul.topnav li:not(.mobile-header) {display: none;}
+  ul.topnav li.mobile-header {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+  }
+  ul.topnav li.icon {
+    position: absolute;
+    top: 8px;
+    left: 92%;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li:not(.mobile-header) {
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+  ul.topnav.responsive a:hover {
+    background-color: #ddd;
+    border: none;
+    -webkit-transition: border-bottom 0s;
+    transition: border-bottom 0s;
+    -webkit-transition: background-color 0.4s;
+    transition: background-color 0.4s;
+  }
+  ul.topnav.responsive .active-nav {
+    background-color: mediumseagreen;
+  }
+  ul.topnav.responsive ul li, li a {
+      width: 100%;
+  }
+  ul.topnav.responsive li ul {
+      position: static;
+  }
+  ul.topnav.responsive li ul li {
+      padding: 0;
+      margin: 0;
+  }
+  ul.topnav.responsive li ul li a{
+      margin-left: 20px;
+  }
 }

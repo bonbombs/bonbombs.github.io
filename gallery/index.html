@@ -3,7 +3,9 @@
     <head>
         <title>Kelly Zhang's Portfolio</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-social.css">
+        <link rel="stylesheet" href="/css/style.css">
         <style> 
             
             .modal .modal-dialog {
@@ -24,39 +26,53 @@
             }
             
             #tallModal .modal-body p { margin-bottom: 900px }
+            .thumbnail {
+                height: 200px;
+                width: 200px;
+                overflow: hidden;
+            }
+            .img-responsive,
+            .thumbnail > img,
+            .thumbnail a > img,
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
         </style>
     </head>
-    <body class="container">
+    <body>
         <script src="../js/navbar.js"></script>
-        <div class="container-fluid contentbody">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="spacer">Gallery //
-                        <small>Various works done for school and personal projects.</small>
-                    </h2>
-                    <p class="text-center"></p>
+        <div class="container">
+            <div class="container-fluid contentbody">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="spacer">Gallery //
+                            <small>Various works done for school and personal projects.</small>
+                        </h2>
+                        <p class="text-center"></p>
+                    </div>
                 </div>
+                <div class="row" id="gallery"></div>
             </div>
-            <div class="row" id="gallery"></div>
-        </div>
-        
-        <div id="imgModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                        <p id="imgDesc"></p>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        
-        
+            
+            <div id="imgModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>One fine body&hellip;</p>
+                        </div>
+                        <div class="modal-footer">
+                            <p id="imgDesc"></p>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script>
@@ -68,22 +84,35 @@
                 },
                 {
                     path: "bigboy.png",
-                    desc: "Concept art done for Heist Night."
+                    desc: "Concept art done for Heist Night. [Big Boy]"
+                },
+                {
+                    path: "missgraves.png",
+                    desc: "Concept art done for Heist Night. [Josephine Graves]"
                 },
                 {
                     path: "spacehime.png",
-                    desc: "Spritework done for a 3-hour Game Jam at Becker College."
+                    desc: "Spritework done for a 3-hour Game Jam at Becker College. [Space Girlfriends]"
                 },
                 {
                     path: "sprite.png",
                     desc: "Painted sprite for Digital Paining assignment."
                 },
+                {
+                    path: "hue.jpg",
+                    desc: "Painted for Twitter banner."
+                },
+                {
+                    path: "artbanner2.png",
+                    desc: "Painted fanart from Legend of the Galactic Heroes."
+                },
             ]
             $(document).ready(function(){
+                $("ul.topnav > li:nth-child(3)").addClass("active-nav");
                 for(var i = 0; i < imgs.length; i++){
-                    $thmbnail = $("<div class='col-xs-6 col-md-3 rounded'>"
+                    $thmbnail = $("<div class='col-lg-3 col-md-4 col-xs-6 rounded'>"
                     + "<a href='#' class='thumbnail'>"
-                    + "<img src=" + imgpath + imgs[i].path + " " + "id=" + i + ">"
+                    + "<img class='img-responsive' src=" + imgpath + imgs[i].path + " " + "id=" + i + ">"
                     + "</a></div>");
                     $thmbnail.click(function(){
                         var imgtag = $(this).children().children();

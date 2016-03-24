@@ -6,17 +6,69 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/bootstrap-social.css">
         <link rel="stylesheet" href="/css/style.css">
+        <style>
+            #goatThere {
+                background: url("/images/goatthere1_tpnt.png") no-repeat center center;
+            }
+            #heistnight {
+                background: url("/images/heistnight.png") no-repeat center 55%;
+            }
+            .jumbotron > h1 p h3 small {
+                position: relative;
+                opacity: 1;
+                z-index: 1;
+            }
+            .details-box {
+                margin-top: 20px;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: white;
+            }
+        </style>
     </head>
     <body>
         <script src="js/navbar.js"></script>
-        
         <div class="container contentbody">
             <div class="row">
                 <div class="col-lg-12 spacer">
-                    <h2>Game Jams <br>
-                        <small>Games made with small groups over a limited period amount of time</small>
-                    </h2>
-                    <p class="text-center"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="jumbotron glass" id="heistnight">
+                    <h1>Heist Night</h1>
+                    <p><b>A turn-based strategy cops vs. robbers game</b></p>
+                    <h4>MassDiGi Game Challenge Alpha Winner</h4>
+                    <a href="http://twitter.com/SunshineDevs" class="btn btn-primary" role="button">
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                    </a>
+                    <a href="#heistNightDetails" class="btn btn-default details" data-toggle="collapse">Details</a>
+                    <div id="heistNightDetails" class="collapse details-box">
+                        <p>
+                            Heist Night is a 4v1 local multiplayer stealth game. The game is run on PC and is 
+                            controlled using either a mobile device or a laptop. 
+                            Players connect to the game through a web browser via QR code or the provided url.
+                            <br>
+                            On the HeistNight team, I am the main web client programmer and 2D artist.
+                        </p>
+                    </div>
+                </div>
+                <div class="jumbotron glass" id="goatThere">
+                    
+                    <h1>goatThere</h1>
+                    <p><b>Desktop map application of Worcester Polytechnic Institute</b></p>
+                    <h4>CS3733 Software Engineering Project</h4>
+                    <a href="https://github.com/CS3733team7/WPITeam7Mapper" class="btn btn-primary" role="button">
+                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                    </a>
+                    <a href="#goatThereDetails" class="btn btn-default details" data-toggle="collapse">Details</a>
+                    <div id="goatThereDetails" class="collapse details-box">
+                        <p>Over the course of 7 weeks we were tasked to develop a desktop Java application that
+                            would allow users to route from one location to another in a Google Maps fashion. In addition to the user client,
+                            our team created a tool that allows developers to make custom maps using connectable nodes and edges. 
+                            <br> 
+                            Within our 8 person team, I was tasked to design and build the UI and implement UI functionality with the backend code.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="row" id="gamejams">
@@ -72,7 +124,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function(){
-                $("ul.topnav > li:nth-child(5)").addClass("active-nav");
+                $("ul.topnav > li:nth-child(4)").addClass("active-nav");
             })
         </script>
     </body>
