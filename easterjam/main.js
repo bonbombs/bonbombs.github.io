@@ -153,8 +153,8 @@ function setup() {
 
     pointer.x = pointer.y = 32;
 
-    pointer.anchor.x = 0.5;
-    pointer.anchor.y = 0.5;
+    pointer.anchor.x = 0.2;
+    pointer.anchor.y = 0.1;
 
     //Add the rocket to the stage
     
