@@ -10,7 +10,6 @@ document.write("<div class='naviagtion'>\
                     <ul class='drop'>\
                         <li><a href='/gallery/index.html'>Gallery</a></li>\
                         <li><a href='/gallery/conceptart.html'>Concept Art</a></li>\
-                        <li><a href='#'>3D</a></li>\
                     </ul>\
                 </li>\
                 <li><a href='/projects.html'>Projects</a></li>\
