@@ -7,34 +7,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/bootstrap-social.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-image-gallery.min.css">
         <style> 
             #weeklist > div > button{
                 border-collapse: collapse;
-            }
-            .modal .modal-dialog {
-                text-align: center;
-                width: 50%;
-            }
-            .modal-wide .modal-body {
-                overflow-y: auto;
-            }
-            
-            .modal-footer {
-                text-align: center;
-            }
-            
-            .modal-body > img {
-                max-width: 100%;
-                max-height: 100%;
-            }
-            #gallery {
-                margin-top: 30px;
-            }
-            #tallModal .modal-body p { margin-bottom: 900px }
-            .thumbnail {
-                height: 200px;
-                width: 200px;
-                overflow: hidden;
             }
             .img-responsive,
             .thumbnail > img,
@@ -45,10 +23,51 @@
                 max-width: 100%;
                 height: auto;
             }
+            #links {
+                margin-top: 20px;
+            }
+            .thumb {
+                padding: 5px;
+            }
         </style>
     </head>
     <body>
         <script src="/js/navbar.js"></script>
+        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+            <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <p class="description"></p>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container contentbody">
             <div class="row">
                 <div class="col-lg-12">
@@ -71,28 +90,17 @@
                     </div>
                 </div>
             </div>
-            <div class="row" id="gallery"></div>
+            <div class="row">
+                <center id="links">
+                </center>
+            </div>
         </div>
-        
-        <div id="imgModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>One fine body&hellip;</p>
-                    </div>
-                    <div class="modal-footer">
-                        <p id="imgDesc"></p>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
         
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+        <script src="/js/bootstrap-image-gallery.min.js"></script>
         <script>
             var imgpath = "/images/conceptart/";
             var week1 = [
@@ -242,18 +250,16 @@
             });
             function populateGallery(week){
                 activeWeek = weeks[week];
-                $("#gallery").html("");
+                $("#links").html("");
                 var imgs = weeks[week];
                 for(var i = 0; i < imgs.length; i++){
-                    $thmbnail = $("<div class='col-xs-6 col-md-3 rounded'>"
-                    + "<a href='#' class='thumbnail'>"
-                    + "<img src=" + imgpath + imgs[i].path + " " + "id=" + i + ">"
-                    + "</a></div>");
-                    $thmbnail.click(function(){
-                        var imgtag = $(this).children().children();
-                        showModal(imgtag[0].getAttribute('id'));
-                    });
-                    $("#gallery").append($thmbnail); 
+                    $thmbnail = $("<a href=" + imgpath + imgs[i].path 
+                    + " title=" + activeWeek[i].desc 
+                    + " data-description=" + activeWeek[i].desc + " data-gallery>"
+                    + "<img class='thumb' src=" + imgpath + imgs[i].path + " " + "id=" + i 
+                    + " " + "height='200'>"
+                    + "</a>");
+                    $("#links").append($thmbnail); 
                 }
             }
             function showModal(idx){
