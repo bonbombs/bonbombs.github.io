@@ -4,7 +4,7 @@ document.write("<div class='naviagtion'>\
             </div>\
             <ul class='topnav'>\
                 <li class='mobile-header'>Kelly Zhang</li>\
-                <li><a href='/index.html'>Home</a></li>\
+                <li><a href='/index.html'>About</a></li>\
                 <li>\
                     <a href='#'>Art</a>\
                     <ul class='drop'>\
@@ -13,7 +13,6 @@ document.write("<div class='naviagtion'>\
                     </ul>\
                 </li>\
                 <li><a href='/projects.html'>Projects</a></li>\
-                <li><a href='#'>Contact</a></li>\
                 <li class='icon'>\
                     <button type='button' class='btn btn-default' onclick='myFunction()'>\
                         <span class='sr-only'>Toggle navigation</span>\

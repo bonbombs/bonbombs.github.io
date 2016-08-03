@@ -6,9 +6,12 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/bootstrap-social.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-image-gallery.min.css">
         <style> 
             
-            .modal .modal-dialog {
+            /*.modal .modal-dialog {
                 text-align: center;
                 width: 50%;
             }
@@ -39,11 +42,61 @@
                 display: block;
                 max-width: 100%;
                 height: auto;
+            }*/
+            .img-responsive,
+            .thumbnail > img,
+            .thumbnail a > img,
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+            #links {
+                margin-top: 20px;
+            }
+            .thumb {
+                padding: 5px;
             }
         </style>
     </head>
     <body>
         <script src="../js/navbar.js"></script>
+        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+            <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <p class="description"></p>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="container-fluid contentbody">
                 <div class="row">
@@ -56,25 +109,11 @@
                 </div>
                 <div class="row" id="gallery"></div>
             </div>
-            
-            <div id="imgModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>One fine body&hellip;</p>
-                        </div>
-                        <div class="modal-footer">
-                            <p id="imgDesc"></p>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-        </div>        
+              
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+        <script src="/js/bootstrap-image-gallery.min.js"></script>
         <script>
             var imgpath = "../images/";
             var imgs = [
@@ -104,7 +143,7 @@
                 },
                 {
                     path: "spacehime.png",
-                    desc: "Spritework done for a 3-hour Game Jam at Becker College. [Space Girlfriends]"
+                    desc: "Spritework done for a 3-hour Game Jam at Becker College. [Space Girlfriends/StarCrossed]"
                 },
                 {
                     path: "sprite.png",
@@ -118,18 +157,36 @@
                     path: "artbanner2.png",
                     desc: "Painted fanart from Legend of the Galactic Heroes."
                 },
+                {
+                    path: "Spikybeetle_design.png",
+                    desc: "Concept art of an enemy spiky beetle."
+                },
+                {
+                    path: "kezhang_hand_back.jpg",
+                    desc: "3D Modeling I - Hand Assignment"
+                },
+                {
+                    path: "venge0014.png",
+                    desc: "3D Modeling I - Final Project [Vengeful Spirit from DOTA2]"
+                }
             ]
             $(document).ready(function(){
                 $("ul.topnav > li:nth-child(3)").addClass("active-nav");
                 for(var i = 0; i < imgs.length; i++){
-                    $thmbnail = $("<div class='col-lg-3 col-md-4 col-xs-6 rounded'>"
-                    + "<a href='#' class='thumbnail'>"
-                    + "<img class='img-responsive' src=" + imgpath + imgs[i].path + " " + "id=" + i + ">"
-                    + "</a></div>");
-                    $thmbnail.click(function(){
-                        var imgtag = $(this).children().children();
-                        showModal(imgtag[0].getAttribute('id'));
-                    });
+                    // $thmbnail = $("<div class='col-lg-3 col-md-4 col-xs-6 rounded'>"
+                    // + "<a href='#' class='thumbnail'>"
+                    // + "<img class='img-responsive' src=" + imgpath + imgs[i].path + " " + "id=" + i + ">"
+                    // + "</a></div>");
+                    $thmbnail = $("<a href=" + imgpath + imgs[i].path 
+                    + " title='" + imgs[i].desc 
+                    + "' data-description=" + imgs[i].desc + " data-gallery>"
+                    + "<img class='thumb' src=" + imgpath + imgs[i].path + " " + "id=" + i 
+                    + " " + "height='200'>"
+                    + "</a>");
+                    // $thmbnail.click(function(){
+                    //     var imgtag = $(this).children().children();
+                    //     showModal(imgtag[0].getAttribute('id'));
+                    // });
                     $("#gallery").append($thmbnail); 
                 }
                 

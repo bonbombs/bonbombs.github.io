@@ -254,8 +254,8 @@
                 var imgs = weeks[week];
                 for(var i = 0; i < imgs.length; i++){
                     $thmbnail = $("<a href=" + imgpath + imgs[i].path 
-                    + " title=" + activeWeek[i].desc 
-                    + " data-description=" + activeWeek[i].desc + " data-gallery>"
+                    + " title='" + activeWeek[i].desc 
+                    + "' data-description=" + activeWeek[i].desc + " data-gallery>"
                     + "<img class='thumb' src=" + imgpath + imgs[i].path + " " + "id=" + i 
                     + " " + "height='200'>"
                     + "</a>");

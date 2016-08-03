@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Random Pixel Pattern Generator</title>
+		<script src="jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<script src="bootstrap.min.js"></script>
+		<style type="text/css">
+			* {
+				font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+			}
+			body{
+				background-image: url('bg.png');
+				font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+			}
+			#logo {
+				text-align: center;
+				margin-bottom: 50px;
+			}
+			.center {
+				text-align: center;
+				padding: 10px;
+				margin: 0 auto;
+			}
+			#main {
+				text-align: center;
+			}
+			
+			#canvas-container {
+				text-align: right;
+			}
+
+			canvas {
+				border-radius: 5px;
+			}
+			ul {
+				width: 50%;
+				display: table;
+				margin: 0 auto;
+				list-style: none;
+			}
+			.colorCircle{
+				border: 1px solid grey;
+				margin: 5px;
+				display: inline-block;
+				border-radius: 100%;
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+		
+		<script src="canvas.js"></script>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-12" id="logo">
+				<h1><img src="logo.png"/></h1>
+			</div>
+		</div>
+		<div class="center">
+			<div class="row">
+				<p><b>How to Download:</b> Right-Click on the Patten and Select "Save Image As..." </p>
+			</div>
+			<div class="row" id="main">
+				<div class="col-md-6" id="canvas-container">
+				<canvas id="canvas" height="500" width="500"></canvas>
+				</div>
+				<div class="col-md-3 panel panel-default">
+	  				<div class="panel-body">
+	  					<h3 style="font-family: Century Gothic, sans-serif;">Color List</h3>
+						<div id="colorList">
+						</div>
+						<div id="showHex">
+						</div>
+					    <br> 
+						<br>
+						Colors: <span id="colorRangeVal">10</span>
+						<br>
+						<input type="range" id="colorRange" value="10" max="20">
+						<br>
+						<br>
+						Pixel Size: <span id="pixelRangeVal">5</span>
+						<br>
+						<input type="range" id="pixelRange" value="5" step="" min="1" max="50">
+						<br>
+						Tile pixels: 
+						<input type="checkbox" id="checkTile">
+						Keep colors:
+						<input type="checkbox" id="retainColors">
+						<button class="btn btn-default" type="submit" id="generateCanvas">Generate!</button>
+						<br>
+						<!--button class="btn btn-default" id="save">Save Pattern</button-->
+			  		</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<footer>
+		<center>
+			<p>Created by Kelly Zhang</p>
+		</center>
+	</footer>
+</html>

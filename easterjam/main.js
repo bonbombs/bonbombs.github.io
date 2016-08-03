@@ -35,8 +35,8 @@ document.body.appendChild(renderer.view);
 
 // Create the main stage for your display objects
 var stage = new PIXI.Container();
-var boxWidth = renderer.width / 10;
-var boxHeight = renderer.height / 10;
+var boxWidth = renderer.width;
+var boxHeight = renderer.height;
 PIXI.loader
     .add("egg.png")
     .add("pointer.png")
