@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heist Night!</title>
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css"/>
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+        
+    </head>
+    <body class="background">
+        <!--div class="topbar">
+        </div-->
+        <div class="row">
+            <div id="sideHUD" class="background bg-2">
+                <div id="charIcon"></div>
+                <ul id="stats">
+                   <li id="health" class="pipbar"></li>
+                   <li id="punch" class="pipbar"></li>
+                   <li id="gun" class="pipbar"></li>
+                   <li id="defense" class="pipbar"></li>
+                   <li id="movement" class="pipbar"></li>
+                </div>
+            </div>
+            <div class="background bg-3">
+                <table id="map">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div id="bottomHUD" class="background bg-1">
+                <center>
+                    <div class="vCenter">
+                        <div class="button">Move</div>
+                        <div class="button">Attack</div>
+                        <div id="zoom" class="button">End Turn</div>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <script src="js/jquery-3.1.0.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.ui.touch-punch.min.js"></script>
+        <script>
+            var currentSize = 50;
+            //generatemap
+            $(document).ready(function(){
+                var lastSelectedBlock;
+                
+                generateMap(10, 10);
+                $("#map").draggable();
+                $("#zoom").click(function(){
+                    $("#map").width((currentSize+10)*10);
+                    $(".tile").width(currentSize+10);
+                    $(".tile").height(currentSize+10);
+                    currentSize += 10;
+                });
+                $("td").click(function(){
+                    if(lastSelectedBlock !== undefined)
+                        lastSelectedBlock.removeClass("selected");
+                    /* border-width: top right bottom left */
+                    $(this).addClass("selected");
+                    lastSelectedBlock = $(this);
+                })
+                initStats();
+            })
+            function generateMap(rows, columns){
+                $("#map").width(rows * currentSize);
+                $("#map").height(columns * currentSize);
+                for(var i = 0; i < rows; i++){
+                    var $row = $("#map tbody").append("<tr></tr>");
+                    for(var j = 0; j < columns; j++){
+                        $("#map tbody tr:nth-child(" + i + ")").append("<td class='tile visionHidden'></td>");
+                        
+                    }
+                }
+                $("tr:nth-child(3) td:nth-child(5)").removeClass("visionHidden");
+                $("tr:nth-child(3) td:nth-child(6)").removeClass("visionHidden");
+                
+
+            }
+
+            function initStats(){
+                for(var i = 0; i < 6; i++)
+                    $("#health").append("<div class='pip'></div>");
+                for(var i = 0; i < 7; i++)
+                    $("#punch").append("<div class='pip'></div>");
+                for(var i = 0; i < 1; i++)
+                    $("#gun").append("<div class='pip'></div>");
+                for(var i = 0; i < 8; i++)
+                    $("#defense").append("<div class='pip'></div>");
+                for(var i = 0; i < 2; i++)
+                    $("#movement").append("<div class='pip'></div>");
+            }
+        </script>
+    </body>
+    
+</html>
