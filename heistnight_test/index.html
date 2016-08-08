@@ -55,7 +55,7 @@
                     $(".tile").height(currentSize+10);
                     currentSize += 10;
                 });
-                $("td").click(function(){
+                $(document).on("click touchstart", "td", function(){
                     if(lastSelectedBlock !== undefined)
                         lastSelectedBlock.removeClass("selected");
                     /* border-width: top right bottom left */
