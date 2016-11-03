@@ -55,13 +55,13 @@
                     $(".tile").height(currentSize+10);
                     currentSize += 10;
                 });
-                $(document).on("click touchstart", "td", function(){
+                $(document).on("click tap", "td", function(){
                     if(lastSelectedBlock !== undefined)
                         lastSelectedBlock.removeClass("selected");
                     /* border-width: top right bottom left */
                     $(this).addClass("selected");
                     lastSelectedBlock = $(this);
-                })
+                });
                 initStats();
             })
             function generateMap(rows, columns){

@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Kelly Zhang's Portfolio</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/bootstrap-social.css">
-        <link rel="stylesheet" href="/css/style.css">
-        <style>
-            #goatThere {
-                background: url("/images/goatthere1_tpnt.png") no-repeat center center;
-            }
-            #heistnight {
-                background: url("/images/heistnight.png") no-repeat center center;
-            }
-            .jumbotron > h1 p h3 small {
-                position: relative;
-                opacity: 1;
-                z-index: 1;
-            }
-            .details-box {
-                margin-top: 20px;
-                padding: 20px;
-                border-radius: 5px;
-                background-color: white;
-            }
-        </style>
-    </head>
-    <body>
-        <script src="js/navbar.js"></script>
-        <div class="container contentbody">
-            <div class="row">
-                <div class="col-lg-12 spacer">
+
+<head>
+    <title>Kelly Zhang's Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-social.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        #goatThere {
+            background: url("/images/goatthere1_tpnt.png") no-repeat center center;
+        }
+        
+        #heistnight {
+            background: url("/images/heistnight.png") no-repeat center center;
+        }
+        
+        .jumbotron > h1 p h3 small {
+            position: relative;
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .details-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/navbar.js"></script>
+    <div class="container contentbody">
+        <div class="row">
+            <div class="col-lg-12 spacer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="jumbotron glass" id="heistnight">
+                <h1>Heist Night</h1>
+                <p><b>A turn-based strategy cops vs. robbers game currently in development</b></p>
+                <h4>MassDiGi Game Challenge Alpha Winner</h4>
+                <a href="http://twitter.com/SunshineDevs" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                </a>
+                <a href="#heistNightDetails" class="btn btn-default details" data-toggle="collapse">Details</a>
+                <div id="heistNightDetails" class="collapse details-box">
+                    <p>
+                        Heist Night is a 4v1 local multiplayer stealth game developed using Unity and HTML5. The game is run on PC and is controlled using either a mobile device or a laptop. Players connect to the game through a web browser via QR code or the provided url.
+                        <br> Among the team, I am the web client programmer for the mobile controller. I am also the 2D artist working on both concept and UI elements for the game.
+                    </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="jumbotron glass" id="heistnight">
-                    <h1>Heist Night</h1>
-                    <p><b>A turn-based strategy cops vs. robbers game currently in development</b></p>
-                    <h4>MassDiGi Game Challenge Alpha Winner</h4>
-                    <a href="http://twitter.com/SunshineDevs" class="btn btn-primary" role="button">
-                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                    </a>
-                    <a href="#heistNightDetails" class="btn btn-default details" data-toggle="collapse">Details</a>
-                    <div id="heistNightDetails" class="collapse details-box">
-                        <p>
-                            Heist Night is a 4v1 local multiplayer stealth game developed using Unity and HTML5. The game is run on PC and is 
-                            controlled using either a mobile device or a laptop.
-                            Players connect to the game through a web browser via QR code or the provided url.
-                            <br>
-                            Among the team, I am the web client programmer for the mobile controller. 
-                            I am also the 2D artist working on both concept and UI elements for the game.
-                        </p>
-                    </div>
-                </div>
-                <div class="jumbotron glass" id="goatThere">
-                    
-                    <h1>goatThere</h1>
-                    <p><b>Desktop map application of Worcester Polytechnic Institute</b></p>
-                    <h4>CS3733 Software Engineering Project</h4>
-                    <a href="https://github.com/CS3733team7/WPITeam7Mapper" class="btn btn-primary" role="button">
-                        <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                    </a>
-                    <a href="#goatThereDetails" class="btn btn-default details" data-toggle="collapse">Details</a>
-                    <div id="goatThereDetails" class="collapse details-box">
-                        <p>Over the course of 7 weeks we were tasked to develop a desktop Java application that
-                            would allow users to route from one location to another in a Google Maps fashion. In addition to the user client,
-                            our team created a tool that allows developers to make custom maps using connectable nodes and edges. 
-                            <br> 
-                            Within our 8 person team, I was tasked to design and build the UI and implement UI functionality with the backend code.
-                        </p>
-                    </div>
+            <div class="jumbotron glass" id="goatThere">
+
+                <h1>goatThere</h1>
+                <p><b>Desktop map application of Worcester Polytechnic Institute</b></p>
+                <h4>CS3733 Software Engineering Project</h4>
+                <a href="https://github.com/CS3733team7/WPITeam7Mapper" class="btn btn-primary" role="button">
+                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                </a>
+                <a href="#goatThereDetails" class="btn btn-default details" data-toggle="collapse">Details</a>
+                <div id="goatThereDetails" class="collapse details-box">
+                    <p>Over the course of 7 weeks we were tasked to develop a desktop Java application that would allow users to route from one location to another in a Google Maps fashion. In addition to the user client, our team created a tool that allows
+                        developers to make custom maps using connectable nodes and edges.
+                        <br> Within our 8 person team, I was tasked to design and build the UI and implement UI functionality with the backend code.
+                    </p>
                 </div>
             </div>
-            <div class="row" id="gamejams">
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+        </div>
+        <div class="row" id="gamejams">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <div class="caption">
                         <h3>bonbombs.github.io</h3>
                         <div id="mywebsite">
@@ -82,126 +81,131 @@
                             </p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <img src="images/bg2.png" alt="...">
                     <div class="caption">
                         <h3>Pixel Pattern Generator</h3>
-                        <p><a href="https://bonbombs.github.io/pixgen/index" class="btn btn-primary" role="button">
-                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                        </a>
-                        <a href="#" class="btn btn-primary" role="button" disabled="disabled">
-                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                        </a>
-                        <a href="#pixgen" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        <p>
+                            <a href="https://bonbombs.github.io/pixgen/index" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            </a>
+                            <a href="#" class="btn btn-primary" role="button" disabled="disabled">
+                                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            </a>
+                            <a href="#pixgen" class="btn btn-default details" data-toggle="collapse">Details</a>
                         </p>
                         <div id="pixgen" class="collapse">
-                            <p>A small web-based random pixel pattern generator. Can create patterns of varying colors and sizes.<br>
-                                This project was to get me familiar with canvas-based drawing in HTML5.
+                            <p>
+                                Creates blocks of varying colors in a grid format.<br> Pixel Pattern Generator takes the form of a
+                                <a href="https://twitter.com/randomtiles">Twitter bot</a> as well as a local webapp.<br> This project was to get me familiar with canvas-based drawing in HTML5. I then took the core of the generator to run on a Heroku app
+                                where it generates an image and posts a random phrase onto Twitter using the Twitter API.
                             </p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <img src="images/screen2.png" alt="...">
                     <div class="caption">
                         <h3>untitled</h3>
-                        <p><a href="https://bonbombs.github.io/easterjam/index" class="btn btn-primary" role="button" disabled="disabled">
-                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                        </a>
-                        <a href="#" class="btn btn-primary" role="button" disabled="disabled">
-                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                        </a>
-                        <a href="#untitledgame" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        <p>
+                            <a href="https://bonbombs.github.io/easterjam/index" class="btn btn-primary" role="button" disabled="disabled">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            </a>
+                            <a href="#" class="btn btn-primary" role="button" disabled="disabled">
+                                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            </a>
+                            <a href="#untitledgame" class="btn btn-default details" data-toggle="collapse">Details</a>
                         </p>
                         <div id="untitledgame" class="collapse">
-                            <p>Ongoing project. Explore randomly generated planets that vary in size and gravity! A game meant for me
-                                to further explore the Unity game engine.
+                            <p>Ongoing project. Explore randomly generated planets that vary in size and gravity! A game meant for me to further explore the Unity game engine.
                             </p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <img src="images/leggy.png" alt="...">
                     <div class="caption">
                         <h3>Leggy Pet Simulator 2K16 <br><small>WPI Easter Game Jam 2016 // 6 hours</small></h3>
-                        <p><a href="https://bonbombs.github.io/easterjam/index" class="btn btn-primary" role="button">
-                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                        </a>
-                        <a href="#" class="btn btn-primary" role="button" disabled="disabled">
-                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                        </a>
-                        <a href="#egggame" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        <p>
+                            <a href="https://bonbombs.github.io/easterjam/index" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            </a>
+                            <a href="#" class="btn btn-primary" role="button" disabled="disabled">
+                                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            </a>
+                            <a href="#egggame" class="btn btn-default details" data-toggle="collapse">Details</a>
                         </p>
                         <div id="egggame" class="collapse">
-                            <p>A simple simulator where you take care of an egg with legs that occasionally gets hungry and upset.<br>
-                                This game was mostly meant for me to get used to programming with the pixi.js library. I learned how to make simple spritesheets and have the sprites animate using the library.
-                                Additionally, I learned how to create simple random behavior of the egg as it waddles horizontally back and forth around the screen.
+                            <p>A simple simulator where you take care of an egg with legs that occasionally gets hungry and upset.<br> This game was mostly meant for me to get used to programming with the pixi.js library. I learned how to make simple spritesheets
+                                and have the sprites animate using the library. Additionally, I learned how to create simple random behavior of the egg as it waddles horizontally back and forth around the screen.
                             </p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <img src="images/dontdropthebaby.jpg" alt="...">
                     <div class="caption">
                         <h3>Don't Drop the Baby <br><small>Global Game Jam 2016 // 48 hours</small></h3>
-                        <p><a href="http://globalgamejam.org/2016/games/dont-drop-baby" class="btn btn-primary" role="button">
-                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                        </a>
-                        <a href="http://ggj.s3.amazonaws.com/games/2016/01/31/1801/Don%27t%20Drop%20the%20Baby.zip" class="btn btn-primary" role="button">
-                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                        </a>
-                        <a href="#babydrop" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        <p>
+                            <a href="http://globalgamejam.org/2016/games/dont-drop-baby" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            </a>
+                            <a href="http://ggj.s3.amazonaws.com/games/2016/01/31/1801/Don%27t%20Drop%20the%20Baby.zip" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            </a>
+                            <a href="#babydrop" class="btn btn-default details" data-toggle="collapse">Details</a>
                         </p>
                         <div id="babydrop" class="collapse">
                             <p>You and a friend play as two imps who have to catch babies that are randomly falling from the sky. Bounce the baby once, let go of the blanket, and catch the baby with your hands.<br>
-                            <br>This is based on a ritual in western India where babies are thrown off of tall buildings to bless the baby and their family.
-                                Worked on alongside Erik Cerini, Lily Bunyea, and Khalif Mitchell.
+                                <br>This is based on a ritual in western India where babies are thrown off of tall buildings to bless the baby and their family. Worked on alongside Erik Cerini, Lily Bunyea, and Khalif Mitchell.
                             </p>
                             <p>I worked on player controls, UI, and character sprites.</p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
                     <img src="images/gamdev.png" alt="...">
                     <div class="caption">
                         <h3>Maximum Cabatcity <br><small>WPI A-Term Game Jam 2015 // 48 hours</small></h3>
-                        <p><a href="#" class="btn btn-primary" role="button" disabled="disabled">
-                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                        </a>
-                        <a href="#" class="btn btn-primary" role="button">
-                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                        </a>
-                        <a href="#maxbat" class="btn btn-default details" data-toggle="collapse">Details</a>
+                        <p>
+                            <a href="#" class="btn btn-primary" role="button" disabled="disabled">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                            </a>
+                            <a href="#" class="btn btn-primary" role="button">
+                                <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            </a>
+                            <a href="#maxbat" class="btn btn-default details" data-toggle="collapse">Details</a>
                         </p>
                         <div id="maxbat" class="collapse">
-                            <p>Maximum Cabatcity is a clicker game where there are many bats spawning and circling around you. The more bats, the faster your HP depletes. In order to survive, the player must click on the button in the middle to throw bones, knocking the bats out. 
-                            Worked alongside on alongside Hope Wallace.
+                            <p>Maximum Cabatcity is a clicker game where there are many bats spawning and circling around you. The more bats, the faster your HP depletes. In order to survive, the player must click on the button in the middle to throw bones,
+                                knocking the bats out. Worked alongside on alongside Hope Wallace.
                             </p>
                             <p>I worked on the implementing the powerup spawner, integrating powerups with the bone projectiles and the UI.
                         </div>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function(){
-                $("ul.topnav > li:nth-child(4)").addClass("active-nav");
-            })
-        </script>
-    </body>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("ul.topnav > li:nth-child(4)").addClass("active-nav");
+        })
+    </script>
+</body>
+
 </html>
